@@ -26,37 +26,38 @@ The workflow also generates an Excel report containing wall IDs, wall type names
 | IN[2] | Status if keyword does not match | INTERIOR / OTHER |
 
 '''
-import clr
 
-clr.AddReference("RevitServices")
-from RevitServices.Persistence import DocumentManager
-from RevitServices.Transactions import TransactionManager
-
-clr.AddReference("RevitAPI")
-from Autodesk.Revit.DB import FilteredElementCollector, Wall
-
-doc = DocumentManager.Instance.CurrentDBDocument
-
-search_text = IN[0]
-match_status = IN[1]
-non_match_status = IN[2]
-
-walls = FilteredElementCollector(doc).OfClass(Wall).ToElements()
-
-results = []
-report_data = []
-
-matched_count = 0
-non_matched_count = 0
-
-# Excel header
-report_data.append(
-    ["Wall ID", "Wall Type", "Status"]
-)
-
-TransactionManager.Instance.EnsureInTransaction(doc)
-
-for wall in walls:
+    import clr
+    
+    clr.AddReference("RevitServices")
+    from RevitServices.Persistence import DocumentManager
+    from RevitServices.Transactions import TransactionManager
+    
+    clr.AddReference("RevitAPI")
+    from Autodesk.Revit.DB import FilteredElementCollector, Wall
+    
+    doc = DocumentManager.Instance.CurrentDBDocument
+    
+    search_text = IN[0]
+    match_status = IN[1]
+    non_match_status = IN[2]
+    
+    walls = FilteredElementCollector(doc).OfClass(Wall).ToElements()
+    
+    results = []
+    report_data = []
+    
+    matched_count = 0
+    non_matched_count = 0
+    
+    # Excel header
+    report_data.append(
+        ["Wall ID", "Wall Type", "Status"]
+    )
+    
+    TransactionManager.Instance.EnsureInTransaction(doc)
+    
+    for wall in walls:
 
     wall_type = doc.GetElement(wall.GetTypeId())
 
@@ -112,7 +113,7 @@ for wall in walls:
 
     OUT = report_data
 
-    '''
+'''
 ## Workflow
 
 1. Open Revit model
