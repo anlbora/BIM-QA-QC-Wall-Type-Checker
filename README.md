@@ -102,15 +102,15 @@ for wall in walls:
         ]
     )
 
-TransactionManager.Instance.TransactionTaskDone()
+    TransactionManager.Instance.TransactionTaskDone()
 
-summary = "Checked {} walls | Matched: {} | Not matched: {}".format(
-    len(walls),
-    matched_count,
-    non_matched_count
-)
+    summary = "Checked {} walls | Matched: {} | Not matched: {}".format(
+        len(walls),
+        matched_count,
+        non_matched_count
+    )
 
-OUT = report_data
+    OUT = report_data
 
 '''
 ## Workflow
