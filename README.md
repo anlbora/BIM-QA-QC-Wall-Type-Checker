@@ -1,4 +1,4 @@
-# BIM QA/QC Wall Type Checker
+# BIM QA/QC Wall Type Checker | Dynamo + Python + Revit API
 
 A Dynamo + Python automation tool for Autodesk Revit that performs wall type classification, parameter writing, and Excel-based QA/QC reporting.
 
