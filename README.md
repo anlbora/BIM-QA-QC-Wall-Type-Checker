@@ -1,41 +1,67 @@
 # BIM QA/QC Wall Type Checker
 
-A Dynamo + Python automation tool for Autodesk Revit that checks wall types based on user-defined keywords and writes QA/QC results into the Comments parameter.
+A Dynamo + Python automation tool for Autodesk Revit that performs wall type classification, parameter writing, and Excel-based QA/QC reporting.
 
-## Problem
+## Overview
 
-In BIM coordination workflows, checking whether wall types follow naming or classification logic is often done manually. This process is repetitive, time-consuming, and prone to human error.
+This tool automates a repetitive BIM coordination task by checking wall type names against a user-defined keyword and automatically classifying wall elements inside Revit.
 
-## Solution
+The workflow also generates an Excel report containing wall IDs, wall type names, and QA/QC results.
 
-This tool automates the wall type checking process by:
+## Features
 
-- Collecting all wall elements in the Revit model
-- Reading each wall type name
-- Checking whether the type name contains a user-defined keyword
-- Writing the result into the Comments parameter
-- Producing a summary report in Dynamo
+* Collects all wall elements from the Revit model
+* Reads wall type names using the Revit API
+* Applies keyword-based classification logic
+* Writes results into the Comments parameter
+* Generates Excel QA/QC reports
+* Uses reusable Dynamo Python inputs
 
 ## Inputs
 
-| Input | Description | Example |
-|---|---|---|
-| IN[0] | Keyword to search in wall type name | Exterior |
-| IN[1] | Status if keyword is found | EXTERIOR WALL |
-| IN[2] | Status if keyword is not found | INTERIOR / OTHER |
+| Input | Description                      | Example          |
+| ----- | -------------------------------- | ---------------- |
+| IN[0] | Keyword to search                | Exterior         |
+| IN[1] | Status if keyword matches        | EXTERIOR WALL    |
+| IN[2] | Status if keyword does not match | INTERIOR / OTHER |
 
 ## Workflow
 
 1. Open Revit model
 2. Run Dynamo graph
-3. Enter keyword and status values
-4. Run script
-5. Check wall Comments parameter
-6. Review output report
+3. Enter keyword and status inputs
+4. Execute Python script
+5. Review updated Comments parameters
+6. Export QA/QC report to Excel
 
-## Output
+## Excel Output
 
-Example output:
+| Wall ID | Wall Type           | Status           |
+| ------- | ------------------- | ---------------- |
+| 12345   | Basic Wall Exterior | EXTERIOR WALL    |
+| 67890   | Generic Interior    | INTERIOR / OTHER |
 
-```text
-Checked 120 walls | Matched: 48 | Not matched: 72
+## Technologies Used
+
+* Autodesk Revit
+* Dynamo
+* Python
+* Revit API
+* Excel Integration
+
+## Skills Demonstrated
+
+* BIM QA/QC automation
+* Revit API integration
+* Parameter reading and writing
+* Custom filtering logic
+* Excel report generation
+* Reusable automation workflows
+
+## Future Improvements
+
+* WPF user interface
+* Multi-category support
+* CSV/JSON export
+* Automatic issue dashboards
+* ACC integration
