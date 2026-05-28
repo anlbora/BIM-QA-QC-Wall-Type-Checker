@@ -66,7 +66,6 @@ The workflow also generates an Excel report containing wall IDs, wall type names
 
     type_name_param = (
         wall_type.LookupParameter("Type Name")
-        or wall_type.LookupParameter("Tip Adı")
     )
 
     if type_name_param:
@@ -113,7 +112,6 @@ The workflow also generates an Excel report containing wall IDs, wall type names
 
     OUT = report_data
 
-'''
 ## Workflow
 
 1. Open Revit model
@@ -154,3 +152,5 @@ The workflow also generates an Excel report containing wall IDs, wall type names
 * CSV/JSON export
 * Automatic issue dashboards
 * ACC integration
+
+
