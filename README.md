@@ -153,4 +153,7 @@ The workflow also generates an Excel report containing wall IDs, wall type names
 * Automatic issue dashboards
 * ACC integration
 
-
+<img width="1144" height="796" alt="Image" src="https://github.com/user-attachments/assets/9f632fc5-1a52-4619-bee7-70523dd69d2e" />
+<img width="468" height="308" alt="Image" src="https://github.com/user-attachments/assets/a03cc0e7-99c4-41d3-b227-d5feb9646907" />
+<img width="470" height="315" alt="Image" src="https://github.com/user-attachments/assets/0fea3f12-9476-4520-bc50-943d747c7e84" />
+<img width="569" height="419" alt="Image" src="https://github.com/user-attachments/assets/9ee255cb-b3e3-4b52-b6bb-069d80b5647b" />
